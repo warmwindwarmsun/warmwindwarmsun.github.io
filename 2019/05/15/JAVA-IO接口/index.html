@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>JAVA/IO接口 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Collection表示一组对象，它是集中、收集的意思。Collection接口的两个子接口是List、Set接口 public class TestList{     public static void main(String[] args){         Collection&amp;lt;String&amp;gt; c = new ArrayList&amp;lt;&amp;gt;();//         Sys">
+  <meta name="description" content="Collection表示一组对象，它是集中、收集的意思。Collection接口的两个子接口是List、Set接口 1234567891011121314public class TestList&amp;#123;	public static void main(String[] args)&amp;#123;	 Collection&amp;lt;String&amp;gt; c = new ArrayList&amp;lt;&amp;gt">
 <meta name="keywords" content="-JAVA学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA&#x2F;IO接口">
 <meta property="og:url" content="http://yoursite.com/2019/05/15/JAVA-IO接口/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Collection表示一组对象，它是集中、收集的意思。Collection接口的两个子接口是List、Set接口 public class TestList{     public static void main(String[] args){         Collection&amp;lt;String&amp;gt; c = new ArrayList&amp;lt;&amp;gt;();//         Sys">
+<meta property="og:description" content="Collection表示一组对象，它是集中、收集的意思。Collection接口的两个子接口是List、Set接口 1234567891011121314public class TestList&amp;#123;	public static void main(String[] args)&amp;#123;	 Collection&amp;lt;String&amp;gt; c = new ArrayList&amp;lt;&amp;gt">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-16T08:48:56.023Z">
+<meta property="og:updated_time" content="2019-05-16T12:58:21.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA&#x2F;IO接口">
-<meta name="twitter:description" content="Collection表示一组对象，它是集中、收集的意思。Collection接口的两个子接口是List、Set接口 public class TestList{     public static void main(String[] args){         Collection&amp;lt;String&amp;gt; c = new ArrayList&amp;lt;&amp;gt;();//         Sys">
+<meta name="twitter:description" content="Collection表示一组对象，它是集中、收集的意思。Collection接口的两个子接口是List、Set接口 1234567891011121314public class TestList&amp;#123;	public static void main(String[] args)&amp;#123;	 Collection&amp;lt;String&amp;gt; c = new ArrayList&amp;lt;&amp;gt">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -176,20 +176,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Collection表示一组对象，它是集中、收集的意思。Collection接口的两个子接口是List、Set接口</p>
-<pre><code>public class TestList{
-    public static void main(String[] args){
-        Collection&lt;String&gt; c = new ArrayList&lt;&gt;();//
-        System.out.println(c.size());
-        System.out.println(c.isEmpty());
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestList</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">	 Collection&lt;String&gt; c = <span class="keyword">new</span> ArrayList&lt;&gt;();<span class="comment">//</span></span><br><span class="line">		System.out.println(c.size());</span><br><span class="line">		System.out.println(c.isEmpty());</span><br><span class="line"></span><br><span class="line">		c.add(<span class="string">"深入理解Collection"</span>)；<span class="comment">//添加元素，因为已经规定了String泛型，所以只能放入字符串</span></span><br><span class="line">		c.add();<span class="comment">//添加</span></span><br><span class="line">		c.remove();<span class="comment">//移除操作</span></span><br><span class="line">		c.clear();<span class="comment">//清除</span></span><br><span class="line">		Object[] objs = c.toArray();<span class="comment">//转化出一个Object数组</span></span><br><span class="line">		c.contains();<span class="comment">//判断是否包含某元素</span></span><br><span class="line">			</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        c.add(&quot;深入理解Collection&quot;)；//添加元素，因为已经规定了String泛型，所以只能放入字符串
-        c.add();//添加
-        c.remove();//移除操作
-        c.clear();//清除
-        Object[] objs = c.toArray();//转化出一个Object数组
-        c.contains();//判断是否包含某元素
-
-}</code></pre><h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p>List是有序可重复的容器</p>
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p>List是有序可重复的容器</p>
 <h4 id="有序："><a href="#有序：" class="headerlink" title="有序："></a>有序：</h4><p>list中每个元素都有索引标记。可以根据元素的索引（在list中的位置）访问元素，从而精确控制这些元素</p>
 <h4 id="可重复："><a href="#可重复：" class="headerlink" title="可重复："></a>可重复：</h4><p>list允许加入重复的元素。更确切的讲，list通常允许满足e1.equals(e2)的元素重复加入容器。</p>
 <h4 id="list接口常用的实现类："><a href="#list接口常用的实现类：" class="headerlink" title="list接口常用的实现类："></a>list接口常用的实现类：</h4><ul>
@@ -283,6 +272,13 @@
 <td align="left">序列化接口</td>
 </tr>
 </tbody></table>
+<h2 id="流分类"><a href="#流分类" class="headerlink" title="流分类"></a>流分类</h2><ul>
+<li>节点流：可以直接从数据源或目的地读写数据</li>
+<li>处理流（包装流）：不直接连接到数据源或目的地，是其他流进行封装。目的主要是简化操作和提高性能。</li>
+<li>节点流和处理流的关系：</li>
+</ul>
+<p>1.节点流处于io操作的第一线，所有操作必须通过他们进行；</p>
+<p>2.处理流可以对其他流进行处理（提高效率或操作灵活性）</p>
 
       
 
@@ -430,7 +426,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList"><span class="toc-number">1.</span> <span class="toc-text">ArrayList</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#有序："><span class="toc-number">1.0.1.</span> <span class="toc-text">有序：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可重复："><span class="toc-number">1.0.2.</span> <span class="toc-text">可重复：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#list接口常用的实现类："><span class="toc-number">1.0.3.</span> <span class="toc-text">list接口常用的实现类：</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#手工实现ArrayList"><span class="toc-number">2.</span> <span class="toc-text">手工实现ArrayList</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Vector"><span class="toc-number">2.0.1.</span> <span class="toc-text">Vector</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何选用List常用接口的实现类"><span class="toc-number">2.1.</span> <span class="toc-text">如何选用List常用接口的实现类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java-io"><span class="toc-number">3.</span> <span class="toc-text">java.io</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java-io包中最重要的五个类和三个接口"><span class="toc-number">4.</span> <span class="toc-text">java.io包中最重要的五个类和三个接口</span></a></li>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList"><span class="toc-number">1.</span> <span class="toc-text">ArrayList</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#有序："><span class="toc-number">1.0.1.</span> <span class="toc-text">有序：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可重复："><span class="toc-number">1.0.2.</span> <span class="toc-text">可重复：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#list接口常用的实现类："><span class="toc-number">1.0.3.</span> <span class="toc-text">list接口常用的实现类：</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#手工实现ArrayList"><span class="toc-number">2.</span> <span class="toc-text">手工实现ArrayList</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Vector"><span class="toc-number">2.0.1.</span> <span class="toc-text">Vector</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何选用List常用接口的实现类"><span class="toc-number">2.1.</span> <span class="toc-text">如何选用List常用接口的实现类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java-io"><span class="toc-number">3.</span> <span class="toc-text">java.io</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java-io包中最重要的五个类和三个接口"><span class="toc-number">4.</span> <span class="toc-text">java.io包中最重要的五个类和三个接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流分类"><span class="toc-number">5.</span> <span class="toc-text">流分类</span></a></li>
                     </div>
                 </span>
             </div>
