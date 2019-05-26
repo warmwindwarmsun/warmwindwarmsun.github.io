@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JAVA/IO接口 | Hexo</title>
+  <title>JAVA/IO | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Collection表示一组对象，它是集中、收集的意思。Collection接口的两个子接口是List、Set接口 1234567891011121314public class TestList&amp;#123;	public static void main(String[] args)&amp;#123;	 	Collection&amp;lt;String&amp;gt; c = new ArrayList&amp;lt;&amp;g">
+  <meta name="description" content="java.io在java程序中，对于数据的输入、输出操作以“流”（stream）方式进行：J2SDK提供了各种各样的“流”类，用以获取不同种类的数据：程序中通过标准的方法输入或输出数据。JAVA的流类型一般唯一java.io包中。 java.io包中最重要的五个类和三个接口   Tables Are    File 文件类   InputStream 字节输入流   OutputStream 字节">
 <meta name="keywords" content="-JAVA学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA&#x2F;IO接口">
+<meta property="og:title" content="JAVA&#x2F;IO">
 <meta property="og:url" content="http://yoursite.com/2019/05/15/JAVA-IO接口/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Collection表示一组对象，它是集中、收集的意思。Collection接口的两个子接口是List、Set接口 1234567891011121314public class TestList&amp;#123;	public static void main(String[] args)&amp;#123;	 	Collection&amp;lt;String&amp;gt; c = new ArrayList&amp;lt;&amp;g">
+<meta property="og:description" content="java.io在java程序中，对于数据的输入、输出操作以“流”（stream）方式进行：J2SDK提供了各种各样的“流”类，用以获取不同种类的数据：程序中通过标准的方法输入或输出数据。JAVA的流类型一般唯一java.io包中。 java.io包中最重要的五个类和三个接口   Tables Are    File 文件类   InputStream 字节输入流   OutputStream 字节">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-16T13:05:09.586Z">
+<meta property="og:updated_time" content="2019-05-19T12:00:13.428Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JAVA&#x2F;IO接口">
-<meta name="twitter:description" content="Collection表示一组对象，它是集中、收集的意思。Collection接口的两个子接口是List、Set接口 1234567891011121314public class TestList&amp;#123;	public static void main(String[] args)&amp;#123;	 	Collection&amp;lt;String&amp;gt; c = new ArrayList&amp;lt;&amp;g">
+<meta name="twitter:title" content="JAVA&#x2F;IO">
+<meta name="twitter:description" content="java.io在java程序中，对于数据的输入、输出操作以“流”（stream）方式进行：J2SDK提供了各种各样的“流”类，用以获取不同种类的数据：程序中通过标准的方法输入或输出数据。JAVA的流类型一般唯一java.io包中。 java.io包中最重要的五个类和三个接口   Tables Are    File 文件类   InputStream 字节输入流   OutputStream 字节">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -162,7 +162,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JAVA/IO接口
+      JAVA/IO
     </h1>
   
 
@@ -175,26 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Collection表示一组对象，它是集中、收集的意思。Collection接口的两个子接口是List、Set接口</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestList</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">	 	Collection&lt;String&gt; c = <span class="keyword">new</span> ArrayList&lt;&gt;();<span class="comment">//</span></span><br><span class="line">		System.out.println(c.size());</span><br><span class="line">		System.out.println(c.isEmpty());</span><br><span class="line">		c.add(<span class="string">"深入理解Collection"</span>)；<span class="comment">//添加元素，因为已经规定了String泛型，所以只能放入字符串</span></span><br><span class="line">		c.add();<span class="comment">//添加</span></span><br><span class="line">		c.remove();<span class="comment">//移除操作</span></span><br><span class="line">		c.clear();<span class="comment">//清除</span></span><br><span class="line">		Object[] objs = c.toArray();<span class="comment">//转化出一个Object数组</span></span><br><span class="line">		c.contains();<span class="comment">//判断是否包含某元素</span></span><br><span class="line">			</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p>List是有序可重复的容器</p>
-<h4 id="有序："><a href="#有序：" class="headerlink" title="有序："></a>有序：</h4><p>list中每个元素都有索引标记。可以根据元素的索引（在list中的位置）访问元素，从而精确控制这些元素</p>
-<h4 id="可重复："><a href="#可重复：" class="headerlink" title="可重复："></a>可重复：</h4><p>list允许加入重复的元素。更确切的讲，list通常允许满足e1.equals(e2)的元素重复加入容器。</p>
-<h4 id="list接口常用的实现类："><a href="#list接口常用的实现类：" class="headerlink" title="list接口常用的实现类："></a>list接口常用的实现类：</h4><ul>
-<li>ArrayList</li>
-<li>LinkedList</li>
-<li>Vector(线程安全)</li>
-</ul>
-<h2 id="手工实现ArrayList"><a href="#手工实现ArrayList" class="headerlink" title="手工实现ArrayList"></a>手工实现ArrayList</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SxtArrayList</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> Object[] elementData;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> DEFAT_CAPACITY = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">SxtArrayList</span><span class="params">()</span></span>&#123;</span><br><span class="line">		elementData = <span class="keyword">new</span> Object[DEFAT_CAPACITY = <span class="number">10</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">SxtArrayList</span><span class="params">(<span class="keyword">int</span> capacity)</span></span>&#123;</span><br><span class="line">		elementData = <span class="keyword">new</span> Object[capacity];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">		elementData[size++] = obj;</span><br><span class="line">	&#125;		</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;</span><br><span class="line">		StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//[a, b, c]</span></span><br><span class="line">		sb.append(<span class="string">"["</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;size;i++)&#123;</span><br><span class="line">			sb.append(obj+<span class="string">","</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		sb.setCharAt(sb.length()-<span class="number">1</span>,<span class="string">"]"</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> elementData.toString();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		SxtArrayList s1 = <span class="keyword">new</span> SxtArrayList(<span class="number">20</span>);</span><br><span class="line">		</span><br><span class="line">		s1.add(<span class="string">""</span>);</span><br><span class="line">		s1.add(<span class="string">""</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h4><p>Vector底层是用数组实现的list，相关的方法都加了同步检测，因此“线程安全，效率低”。</p>
-<h3 id="如何选用List常用接口的实现类"><a href="#如何选用List常用接口的实现类" class="headerlink" title="如何选用List常用接口的实现类"></a>如何选用List常用接口的实现类</h3><ol>
-<li>需要线程安全时，用Vector.</li>
-<li>不存在线程安全问题时，并且查找较多用ArrayList(一般使用它)。</li>
-<li>不存在线程安全问题时，增加或删除元素较多应LinkedList。</li>
-</ol>
-<h2 id="java-io"><a href="#java-io" class="headerlink" title="java.io"></a>java.io</h2><p>在java程序中，对于数据的输入、输出操作以“流”（stream）方式进行：<br>J2SDK提供了各种各样的“流”类，用以获取不同种类的数据：程序中通过标准的方法输入或输出数据。JAVA的流类型一般唯一java.io包中。</p>
+        <h2 id="java-io"><a href="#java-io" class="headerlink" title="java.io"></a>java.io</h2><p>在java程序中，对于数据的输入、输出操作以“流”（stream）方式进行：<br>J2SDK提供了各种各样的“流”类，用以获取不同种类的数据：程序中通过标准的方法输入或输出数据。JAVA的流类型一般唯一java.io包中。</p>
 <h2 id="java-io包中最重要的五个类和三个接口"><a href="#java-io包中最重要的五个类和三个接口" class="headerlink" title="java.io包中最重要的五个类和三个接口"></a>java.io包中最重要的五个类和三个接口</h2><table>
 <thead>
 <tr>
@@ -389,7 +370,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList"><span class="toc-number">1.</span> <span class="toc-text">ArrayList</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#有序："><span class="toc-number">1.0.1.</span> <span class="toc-text">有序：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可重复："><span class="toc-number">1.0.2.</span> <span class="toc-text">可重复：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#list接口常用的实现类："><span class="toc-number">1.0.3.</span> <span class="toc-text">list接口常用的实现类：</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#手工实现ArrayList"><span class="toc-number">2.</span> <span class="toc-text">手工实现ArrayList</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Vector"><span class="toc-number">2.0.1.</span> <span class="toc-text">Vector</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何选用List常用接口的实现类"><span class="toc-number">2.1.</span> <span class="toc-text">如何选用List常用接口的实现类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java-io"><span class="toc-number">3.</span> <span class="toc-text">java.io</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java-io包中最重要的五个类和三个接口"><span class="toc-number">4.</span> <span class="toc-text">java.io包中最重要的五个类和三个接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流分类"><span class="toc-number">5.</span> <span class="toc-text">流分类</span></a></li>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#java-io"><span class="toc-number">1.</span> <span class="toc-text">java.io</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java-io包中最重要的五个类和三个接口"><span class="toc-number">2.</span> <span class="toc-text">java.io包中最重要的五个类和三个接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流分类"><span class="toc-number">3.</span> <span class="toc-text">流分类</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -499,6 +480,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">-JAVA学习笔记</a>
