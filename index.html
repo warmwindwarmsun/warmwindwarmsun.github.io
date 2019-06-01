@@ -191,7 +191,7 @@
     2. 数据目录
             数据库：文件夹
             表：文件
-            数据：data</code></pre><h2 id="一、SQL"><a href="#一、SQL" class="headerlink" title="一、SQL"></a>一、SQL</h2><pre><code>1.什么是SQL:
+            数据：data</code></pre><h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><pre><code>1.什么是SQL:
         Structured Query Language：结构化查询语言，定义了操作所有关系型数据库的规则
         每一种数据库操作的方式存在不一样的地方，称为“方言”
 2.SQL通用语法
@@ -200,22 +200,22 @@
     3. MySQL数据库的SQL语句不区分大小写，建议使用大写
     4. 三种注释
         * 单行注释：--(一定要加空格)注释内容 或#注释内容（mysql 特有） 多行注释：/*注释内容*/
-3. SQL的分类</code></pre><p><img src="https://img-blog.csdnimg.cn/2019052517135963.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1MDQ3NzU2,size_16,color_FFFFFF,t_70" alt="架构图"></p>
+3. SQL的分类</code></pre><p><img src="https://img-blog.csdnimg.cn/2019052517135963.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1MDQ3NzU2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h4 id="二、DDL：操作数据库、表"><a href="#二、DDL：操作数据库、表" class="headerlink" title="二、DDL：操作数据库、表"></a>二、DDL：操作数据库、表</h4><p><strong>1.操作数据库：CRUD</strong></p>
 <pre><code>1. creat：创建
-    创建数据库：
+    1.创建数据库：
          create database 数据库名称;
-     创建数据库，判断不存在，再创建：
+     2.创建数据库，判断不存在，再创建：
          create database if not exists 数据库名称;
-     创建数据库并指定字符集：
+     3.创建数据库并指定字符集：
         create database 数据库名称 charac set字符集名;
 
-   练习：创建db4数据库，判断是否存在并制定字符集为gbk
+   4.练习：创建db4数据库，判断是否存在并制定字符集为gbk
         create database if not exists db4 character gbk;
  2.Retrieve：查询
-     查询所有数据库的名称：
+     1.查询所有数据库的名称：
           show databases;
-      查询某个数据库的创建语句：
+      2. 查询某个数据库的创建语句：
            show creat database 数据库名称;
 3. Update：修改
      修改数据库的字符集：
@@ -226,9 +226,9 @@
      判断数据库存在，存在再删除
         drop database if exists 数据库名称;
 5.使用数据库
-      查询当前正在使用的数据库名称
+     1. 查询当前正在使用的数据库名称
          select database();
-      使用数据库
+     2. 使用数据库
            use 数据库名称</code></pre><p><strong>2.查询表</strong></p>
 <pre><code>1.C(Create)：创建
     语法：
@@ -268,46 +268,166 @@
     查询表结构
         desc 表名;
 3.U(Update)：修改
-    修改表名
+    1.修改表名
         alter table 表名 rename to 新的表名;
-    修改表的字符集
+    2.修改表的字符集
         alter table 表名 character set  字符集名称;
-    添加一列
+    3.添加一列
         alter table 表名 add 列名 数据类型;
-    修改列的名称 类型
+    4.修改列的名称 类型
         alter table 表名 modify 列名 新数据类型;
         alter table 表名 change 要修改的列名 新列名 新数据类型;
-    删除列
+    5.删除列
         alter table 表名 drop 列名;
 4.D(Delete) ：删除
     drop table 表名;
     drop table if exists 表名;</code></pre><p>客户端图形化工具SQLYog</p>
 <h2 id="三、DML："><a href="#三、DML：" class="headerlink" title="三、DML："></a>三、DML：</h2><pre><code>1.添加数据
-    语法：insert into 表名(列名1,列名2,····列名n) values(值1,值2,····值n);
-    注意：
+    1.语法：insert into 表名(列名1,列名2,····列名n) values(值1,值2,····值n);
+    2.注意：
         （1）列名和值要一一对应
         （2）如果表名后，不定义列名，则默认给所有列赋值
                 insert into 表名 values(值1,值2,····值n);
          (3)除了数字其他要用引号（单双都可以）引用
 2.删除数据
-    语法：
+    1.语法：
         delete from 表名 [where 条件];
-    注意：
+    2.注意：
         如果不加条件，则删除表中所有记录
-    删除所有记录
+    3.删除所有记录
         delete from 表名;    不推荐使用，有多少条记录就会执行多少次删除操作
         TRUNCATE TABLE 表名;     推荐使用 (删除表，再创建一个相同的表)
 3.修改数据
-    语法：
+    1.语法：
         update 表名 set 列名1 = 值1，列名2 = 值2， 。。。[where 条件];
         例子：UPDATE stu SET age = 22 WHERE id = 4;
-    注意：
+    2.注意：
         如果不加任何条件则会将表中记录全部修改</code></pre><h2 id="四、DQL：查询语句"><a href="#四、DQL：查询语句" class="headerlink" title="四、DQL：查询语句"></a>四、DQL：查询语句</h2><pre><code>1.排序查询
-    语法：order by 字句
+    1.语法：order by 字句
         order by 排序字段1 排序方式1，排序字段2，排序方式2
-2.聚合函数
+    2.排序方式：
+        ASC：升序，默认的。
+        DESC：降序
+    3.注意：
+        如果有多个排序条件，则当前一个条件一样时，才回判断第二个条件
+2.聚合函数：将一列数据作为一个整体，进行纵向的计算
+        SELECT 聚合函数(NAME) FROM 表名;
+    1. count：计算个数
+        (1)尽量选择非空的列：主键
+        (2)count(*)
+    2. max：计算最大值
+    3. min：计算最小值
+    4. sum：求和
+    5. avg：计算平均值
+    注意：聚合函数的计算会排除NULL值
+        解决方案：
+            1. 选择不包含非空的列进行计算
+            2. IFNULL函数
 3.分组查询
-4.分页查询</code></pre>
+    1. 语法：group by 分组字段;
+    2. 注意：
+        （1）分组之后查询的字段：分组字段、聚合函数
+        （2）where 和 having 的区别：
+                where 在分组之前进行限定，如果不满足条件，则不参与分组。
+                having在分组之后进行限定，如果不满足结果，则不会被查询出来
+                where 后不可以跟聚合函数，having可以进行聚合函数的判断
+4.分页查询
+    1.语法：limit 开始的索引,每页查询的条数
+    2.公式：开始的索引 = （当前的页码 - 1） * 每页显示的条数
+5.条件查询
+    1.where字句后跟条件
+    2.运算符：
+        @    &gt; 、 &lt; 、 &lt;= 、 &gt;=  、= 、 &lt;&gt;
+        @    BETWEEN...AND
+        @    IN（集合）
+        @    LIKE：模糊查询
+                占位符：
+                    _    单个任意字符
+                    %    多个任意字符
+        @    IS NULL 
+        @    and 或 &amp;&amp;
+        @    or 或 ||
+        @    not 或 |</code></pre><h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><pre><code>*概念：对表中的数据进行限定，保证数据的正确性、有效性和完整性。
+*分类：
+    1.主键约束：primary key
+    2.非空约束：not null
+    3.唯一约束：unique
+    4.外键约束：foreign key
+# 非空约束：not null，值不能为NULL
+    1.创建表时添加约束
+        CREATE TABLE stu(
+            id INT,
+            NAME VARCHAR(20) NOT NULL -- name 为非空
+        );
+    2.创建表后，添加非空约束
+        ALTER TABLE stu MODIFY NAME VARCHAR(20) NOT NULL;
+    3.删除name的非空约束
+        ALTER TABLE stu MODIFY NAME VARCHAR(20);
+# 唯一约束：unique，值不能重复
+    -- 创建表时，添加唯一约束
+        CREATE TABLE stu(
+            id INT,
+            NAME VARCHAR(20) UNIQUE -- 添加了唯一约束
+        );
+    -- 注意mysql中，唯一约束可以有多个null
+    -- 删除唯一约束
+        ALTER TABLE STU DROP INDEX NAME;
+    -- 在创建表后，添加唯一约束
+        ALTER TABLE stu MODIFY  name VARCHAR(20) UNIQUE;
+# 主键约束：primary key
+    1.注意：
+        1.含义：非空且唯一
+        2.一张表只能有一个字段为主键
+        3.主键就是表中记录的唯一标识
+    2.在创建表时，添加主键约束
+        create table stu(
+            id int primary key, -- 添加了主键约束，id不可以重复，不可以为null
+            name varchar(20)
+        );
+    3.删除主键
+        ALTER TABLE stu DROP PRIMARY KEY;
+    4.创建表后，添加主键
+        ALTER TABLE stu MODIFY id INT PRIMARY KEY;
+    5.自动增长
+        概念：如果某一列是数值类型的，使用auto_increment 可以完成值的自动增长
+        -- 在创建表时，添加主键约束，并且完成主键自增长
+            create table stu(
+                id int primary key auto_increment, -- 给id添加主键约束
+                name varchar(20)
+            );
+        -- 删除自动增长
+            alter table stu modify id int;
+        -- 添加自动增长
+            alter table stu modify id int auto_increment;
+# 外键约束：foreign key
+    1.在创建表时，可以添加外键
+        语法：
+            create table 表名(
+                ...
+                外键列
+                constraint 外键名称 foreign key 外键列名称 references 主表名称(主表列名称);
+            );
+    2.删除外键
+        alter table 表名 drop foreign key 外键名称;
+    3.创建表之后，添加外键
+        alter table 表名 add constraint 外键名称 foreign key(外键字段名称) references 主表名称(主表例名称);
+    4.级联操作
+        1.添加级联操作
+            语法：alter table 表名 add constraint 外键名称
+                    foreign key (外键字段名称) references 主表名称(主表列名称) on update cascade on delete cascade;
+        2.分类
+            1.级联更新：on update cascade
+            2.级联删除：on delete cascade</code></pre><h2 id="数据库的设计"><a href="#数据库的设计" class="headerlink" title="数据库的设计"></a>数据库的设计</h2><pre><code>1.多表之间的关系
+    1. 分类：
+        1. 一对一
+        2. 一对多
+    2. 实现关系：
+        1. 一对多：
+            * 如：部门对员工
+            * 实现方式：在多的一方建立外键，指向一的一方的主键
+        2. 多对多：
+
+2.数据库的设计范式</code></pre>
       
 
       
@@ -1049,10 +1169,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">-JAVA学习笔记</a>
               </li>
              
@@ -1062,6 +1178,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-数据结构与算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
               </li>
             
             <div class="clearfix"></div>
