@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>MySQL | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据库的基本概念*MySQL服务启动 1.手动 2.cmd--&amp;gt;services.msc 打开服务的窗口 3.以管理员身份打开cmd     net start mysql 启动     net start mysql 关闭 *MySQL登录      1. mysql -uroot -proot      2. mysql -hip -uroot -p连接目标的密码      3. mys">
+  <meta name="description" content="数据库的基本概念*MySQL服务启动 1. 手动 2. cmd--&amp;gt;services.msc 打开服务的窗口 3. 以管理员身份打开cmd     net start mysql 启动     net start mysql 关闭 *MySQL登录      1. mysql -uroot -proot      2. mysql -hip -uroot -p连接目标的密码      3.">
 <meta name="keywords" content="-MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL">
 <meta property="og:url" content="http://yoursite.com/2019/05/26/MYSQL/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="数据库的基本概念*MySQL服务启动 1.手动 2.cmd--&amp;gt;services.msc 打开服务的窗口 3.以管理员身份打开cmd     net start mysql 启动     net start mysql 关闭 *MySQL登录      1. mysql -uroot -proot      2. mysql -hip -uroot -p连接目标的密码      3. mys">
+<meta property="og:description" content="数据库的基本概念*MySQL服务启动 1. 手动 2. cmd--&amp;gt;services.msc 打开服务的窗口 3. 以管理员身份打开cmd     net start mysql 启动     net start mysql 关闭 *MySQL登录      1. mysql -uroot -proot      2. mysql -hip -uroot -p连接目标的密码      3.">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2019052517135963.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1MDQ3NzU2,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-06-02T14:41:12.955Z">
+<meta property="og:updated_time" content="2019-06-07T12:59:27.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL">
-<meta name="twitter:description" content="数据库的基本概念*MySQL服务启动 1.手动 2.cmd--&amp;gt;services.msc 打开服务的窗口 3.以管理员身份打开cmd     net start mysql 启动     net start mysql 关闭 *MySQL登录      1. mysql -uroot -proot      2. mysql -hip -uroot -p连接目标的密码      3. mys">
+<meta name="twitter:description" content="数据库的基本概念*MySQL服务启动 1. 手动 2. cmd--&amp;gt;services.msc 打开服务的窗口 3. 以管理员身份打开cmd     net start mysql 启动     net start mysql 关闭 *MySQL登录      1. mysql -uroot -proot      2. mysql -hip -uroot -p连接目标的密码      3.">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/2019052517135963.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1MDQ3NzU2,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -178,9 +178,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h2><pre><code>*MySQL服务启动
-1.手动
-2.cmd--&gt;services.msc 打开服务的窗口
-3.以管理员身份打开cmd
+1. 手动
+2. cmd--&gt;services.msc 打开服务的窗口
+3. 以管理员身份打开cmd
     net start mysql 启动
     net start mysql 关闭
 *MySQL登录
@@ -196,10 +196,10 @@
     2. 数据目录
             数据库：文件夹
             表：文件
-            数据：data</code></pre><h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><pre><code>1.什么是SQL:
+            数据：data</code></pre><h2 id="一、SQL"><a href="#一、SQL" class="headerlink" title="一、SQL"></a>一、SQL</h2><pre><code>1. 什么是SQL:
         Structured Query Language：结构化查询语言，定义了操作所有关系型数据库的规则
         每一种数据库操作的方式存在不一样的地方，称为“方言”
-2.SQL通用语法
+2. SQL通用语法
     1. SQL语句可以单行或多行书写，以分号结尾
     2. 可以使用空格和缩进来增强语句的可读性
     3. MySQL数据库的SQL语句不区分大小写，建议使用大写
@@ -235,7 +235,7 @@
          select database();
      2. 使用数据库
            use 数据库名称</code></pre><p><strong>2.查询表</strong></p>
-<pre><code>1.C(Create)：创建
+<pre><code>1. C(Create)：创建
     语法：
     create table 表名(
        列名1 数据类型1,
@@ -263,38 +263,38 @@
                -birthday date,
                -insert_time timestamp
        );
-       复制表
-           create table 表名 like 要复制的表名
+   复制表
+       create table 表名 like 要复制的表名
 
 
-2.R(Retrieve)：查找
+2. R(Retrieve)：查找
     查询某个数据库中所有的表名称
         show tables;
     查询表结构
         desc 表名;
-3.U(Update)：修改
-    1.修改表名
+3. U(Update)：修改
+    1. 修改表名
         alter table 表名 rename to 新的表名;
-    2.修改表的字符集
+    2. 修改表的字符集
         alter table 表名 character set  字符集名称;
-    3.添加一列
+    3. 添加一列
         alter table 表名 add 列名 数据类型;
-    4.修改列的名称 类型
+    4. 修改列的名称 类型
         alter table 表名 modify 列名 新数据类型;
         alter table 表名 change 要修改的列名 新列名 新数据类型;
-    5.删除列
+    5. 删除列
         alter table 表名 drop 列名;
-4.D(Delete) ：删除
+4. D(Delete) ：删除
     drop table 表名;
     drop table if exists 表名;</code></pre><p>客户端图形化工具SQLYog</p>
-<h2 id="三、DML："><a href="#三、DML：" class="headerlink" title="三、DML："></a>三、DML：</h2><pre><code>1.添加数据
+<h2 id="三、DML："><a href="#三、DML：" class="headerlink" title="三、DML："></a>三、DML：</h2><pre><code>1. 添加数据
     1.语法：insert into 表名(列名1,列名2,····列名n) values(值1,值2,····值n);
     2.注意：
         （1）列名和值要一一对应
         （2）如果表名后，不定义列名，则默认给所有列赋值
                 insert into 表名 values(值1,值2,····值n);
          (3)除了数字其他要用引号（单双都可以）引用
-2.删除数据
+2. 删除数据
     1.语法：
         delete from 表名 [where 条件];
     2.注意：
@@ -302,12 +302,12 @@
     3.删除所有记录
         delete from 表名;    不推荐使用，有多少条记录就会执行多少次删除操作
         TRUNCATE TABLE 表名;     推荐使用 (删除表，再创建一个相同的表)
-3.修改数据
+3. 修改数据
     1.语法：
         update 表名 set 列名1 = 值1，列名2 = 值2， 。。。[where 条件];
         例子：UPDATE stu SET age = 22 WHERE id = 4;
     2.注意：
-        如果不加任何条件则会将表中记录全部修改</code></pre><h2 id="四、DQL：查询语句"><a href="#四、DQL：查询语句" class="headerlink" title="四、DQL：查询语句"></a>四、DQL：查询语句</h2><pre><code>1.排序查询
+        如果不加任何条件则会将表中记录全部修改</code></pre><h2 id="四、DQL：查询语句"><a href="#四、DQL：查询语句" class="headerlink" title="四、DQL：查询语句"></a>四、DQL：查询语句</h2><pre><code>1. 排序查询
     1.语法：order by 字句
         order by 排序字段1 排序方式1，排序字段2，排序方式2
     2.排序方式：
@@ -315,7 +315,7 @@
         DESC：降序
     3.注意：
         如果有多个排序条件，则当前一个条件一样时，才回判断第二个条件
-2.聚合函数：将一列数据作为一个整体，进行纵向的计算
+2. 聚合函数：将一列数据作为一个整体，进行纵向的计算
         SELECT 聚合函数(NAME) FROM 表名;
     1. count：计算个数
         (1)尽量选择非空的列：主键
@@ -328,7 +328,7 @@
         解决方案：
             1. 选择不包含非空的列进行计算
             2. IFNULL函数
-3.分组查询
+3. 分组查询
     1. 语法：group by 分组字段;
     2. 注意：
         （1）分组之后查询的字段：分组字段、聚合函数
@@ -336,10 +336,10 @@
                 where 在分组之前进行限定，如果不满足条件，则不参与分组。
                 having在分组之后进行限定，如果不满足结果，则不会被查询出来
                 where 后不可以跟聚合函数，having可以进行聚合函数的判断
-4.分页查询
+4. 分页查询
     1.语法：limit 开始的索引,每页查询的条数
     2.公式：开始的索引 = （当前的页码 - 1） * 每页显示的条数
-5.条件查询
+5. 条件查询
     1.where字句后跟条件
     2.运算符：
         @    &gt; 、 &lt; 、 &lt;= 、 &gt;=  、= 、 &lt;&gt;
@@ -352,7 +352,7 @@
         @    IS NULL 
         @    and 或 &amp;&amp;
         @    or 或 ||
-        @    not 或 |</code></pre><h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><pre><code>*概念：对表中的数据进行限定，保证数据的正确性、有效性和完整性。
+        @    not 或 |</code></pre><h2 id="五、约束"><a href="#五、约束" class="headerlink" title="五、约束"></a>五、约束</h2><pre><code>*概念：对表中的数据进行限定，保证数据的正确性、有效性和完整性。
 *分类：
     1.主键约束：primary key
     2.非空约束：not null
@@ -422,7 +422,7 @@
                     foreign key (外键字段名称) references 主表名称(主表列名称) on update cascade on delete cascade;
         2.分类
             1.级联更新：on update cascade
-            2.级联删除：on delete cascade</code></pre><h2 id="数据库的设计"><a href="#数据库的设计" class="headerlink" title="数据库的设计"></a>数据库的设计</h2><pre><code>1.多表之间的关系
+            2.级联删除：on delete cascade</code></pre><h2 id="六、数据库的设计"><a href="#六、数据库的设计" class="headerlink" title="六、数据库的设计"></a>六、数据库的设计</h2><pre><code>1. 多表之间的关系
     1. 分类：
         1. 一对一
             * 实现方式：可以再任意一方添加唯一外键(unique)指向另一方的主键
@@ -434,7 +434,7 @@
         2. 多对多：
             * 实现方式：需要借助第三张中间表，中间表至少包含两个字段，分别指向两张表的主键，这两个字段作为第三张表的外键，分别指向两张表的主键
 
-2.数据库设计的范式
+2. 数据库设计的范式
  * 概念：设计数据库时，需要遵循的一些给规范。
  * 分类：
      1. 第一范式(1NF)：每一列都是不可分割的原子数据项
@@ -447,7 +447,130 @@
             5. 码：如果在一张表中，一个属性或者属性组，被其他所有属性完全依赖，则称这个属性（属性值）为该表的码。
                 * 主属性：码属性组中的所有属性
                 * 非主属性：除过码属性组的属性
-3. 第三范式(3NF)：在2NF的基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依赖）</code></pre>
+3. 第三范式(3NF)：在2NF的基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依赖）</code></pre><h2 id="七、数据库的备份和还原"><a href="#七、数据库的备份和还原" class="headerlink" title="七、数据库的备份和还原"></a>七、数据库的备份和还原</h2><pre><code>1. 命令行：
+    * 语法 
+        * 备份： mysqldump -u用户名 -p密码 &gt; 保存的路径
+        * 还原：
+            1. 登录数据库
+            2. 创建数据库
+            3. 使用数据库
+            4. 执行文件。source 文件路径
+2. 图形化工具</code></pre><h2 id="八、多表查询："><a href="#八、多表查询：" class="headerlink" title="八、多表查询："></a>八、多表查询：</h2><pre><code>* 查询语法：
+    select 
+        列名表名
+    from
+        表名列名
+    where...
+* 笛卡尔积：
+    * 有两个集合A,B，取这两个集合的所有组成情况。
+    * 要完成多表查询，需要消除无用的数据
+* 多表查询的分类：
+    1. 内连接查询：
+        1. 从哪些表中查询数据
+        2. 条件是什么
+        3. 查询哪些字段
+    2. 外连接查询：
+        1. 左外链接：
+            * 语法：select 字段列表 from 表1 left [outer] join 表2 on 条件
+            * 查询的是左表所有数据以及其交集的部分。
+        2. 右外连接：
+            * 语法：select 字段列表 from 表1 right [outer] join 表2 on 条件
+            * 查询的是右所有数据以及其交集的部分。
+    3. 子查询：
+        * 概念：查询中嵌套查询，称嵌套查询为子查询
+        * -- 查询工资最高的员工信息
+            -- 1.查询最高的工资是多少
+            SELECT MAX(salary) FROM emp;
+            -- 2.查询员工信息，并且工资等于9000的。
+            SELECT *FROM emp WHERE emp.&apos;salary&apos; = 9000;
+            -- 一条语句， 嵌套查询
+            SELECT *FROM emp WHERE emp.&apos;salary&apos; = (SELECT MAX(salary) FROM emp);
+        * 子查询的不同情况：
+            1. 子查询的结果是单行单列的：
+                * 子查询可以作为条件，使用运算符去判断。运算符：&gt; &lt; &lt;= &gt;=
+                * -- 查询平均工资小于平均工资的人
+                SELECT * FROM emp WHERE emp.salary &lt; (SELECT AVG(salary) FROM emp);
+            2. 子查询的结果是多行单列的：
+                * 子查询可以作为条件，使用运算符in来判断
+                -- 查询“财务部”和”市场部“所有的员工信息
+                SELECT id FROM dept WHERE NAME = &apos;财务部&apos; OR NAME = &apos;市场部&apos;;
+                SELECT * FROM emp WHERE dept_id = 3 OR dept_id = 2;
+                -- 子查询
+                SELECT * FROM emp WHERE dept_id IN (SELECT id FROM dept WHERE NAME = &apos;财务部&apos; OR NAME = &apos;市场部&apos;);
+            3. 子查询的结果是多行多列的：
+                * 子查询可以作为一张虚拟表。
+                -- 查询员工入职时间是2018-09-15日之后的员工信息和部门信息
+                SELECT * FROM dept t1 ,(SELECT * FROM emp WHERE emp.&apos;join_date&apos; &gt; &apos;2018-09-15&apos;) t2
+                WHERE t1.id = t2.id;</code></pre><h2 id="九、事务"><a href="#九、事务" class="headerlink" title="九、事务"></a>九、事务</h2><pre><code>1. 事务的基本介绍：
+    1. 概念：
+        * 如果一个包含多个步骤的业务操作，被事务管理，那么这些操作要么同时成功，要么同时失败。
+    2. 操作：
+        1. 开启事务：start transaction;
+        2. 回滚：rollbakc;
+        3. 提交：commit;
+    3. 例子：
+        CREATE TABLE account (
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            NAME VARCHAR(10),
+            balance DOUBLE
+        );
+        -- 添加数据
+        INSERT INTO account (NAME,balance) VALUES (&apos;peter&apos;, 10000), (&apos;alice&apos;, 10000);
+        -- 查询
+        SELECT * FROM account;
+        -- peter给alice转账500
+        -- 0. 开启事务
+        START TRANSACTION;
+        -- 1. Peter账户-500
+        UPDATE account SET balance = balance - 500 WHERE NAME = &apos;peter&apos;;
+
+        -- 2. alice账户+500
+        UPDATE account SET balance = balance + 500 WHERE NAME = &apos;alice&apos;;
+
+        -- 发现执行没有问题，提交事务
+        COMMIT;
+        -- 发现执行有问题，回滚事务
+        ROLLBACK;
+    4. MySQL数据库中默认事务自动提交
+        * 事务提交的两种方式：
+            * 自动提交：mysql就是自动提交的，一条DML（增删改）语句会自动提交一次事务
+            * 手动提交：需要先开启事务，再提交
+        * 修改事务的默认提交方式：
+            * 查看事务的默认提交方式：SELECT @@autocommit; -- 1代表自动提交， 0代表手动提交
+            * 修改事务默认提交方式：SET @@autocommit = 0;
+2. 事务的四大特征：
+    1. 原子性：是不可分割的最小操作单位，要么同时成功，要么同时失败。
+    2. 持久性：当事务提交或者回滚后，数据库会被持久的保存数据。
+    3. 隔离性：多个事物之间。相互独立。
+    4. 一致性：事务操作前后，数据总量不变。
+3. 事务的隔离级别（了解）：
+    1. 概念：多个事务之间隔离的，相互独立的，但是如果多个事务操作同一批数据，则会引发一些问题，设置不同的隔离级别就可以解决这些问题。
+    2. 存在问题：
+        * 脏读：一个事务，读取到另一个事务中没有提交的数据称为脏读
+        * 不可重复读：在同一个事务中，再次读取到的数据不一样。
+        * 幻读：一个事务操作（DML）数据表中所有记录，另一个事物添加了一条数据，则第一个事务查询不到自己的修改。
+    3. 隔离级别：
+        1. read uncommitted：读未提交
+            * 产生的问题：脏读、不可读、幻读
+        2. read committed：读已提交（Oracle默认）
+            * 产生的问题：不可重复读、幻读
+        3. repeatable read：可重复读（MySQL默认）
+            * 产生的问题：幻读
+        4. serializable：串行化
+            * 可以解决所有的问题
+            * （提交或者回滚后才可以完成查询等操作）
+    * 注意：隔离级别从小到大安全性越来越高，但是效率越来越低 
+    * 数据库查询隔离级别：
+        * select @@tx_isolation;
+    * 数据库设置隔离级别：
+        * set global transaction isolation level 级别字符串;
+    ** 演示：
+        脏读：
+        set global transaction isolation level read uncommitted;
+        start transaction;
+        -- 转账操作
+        update account set balance = balance - 500 where id = 1;
+        update account set balance = balance + 500 where id = 2;</code></pre>
       
 
       
@@ -585,7 +708,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库的基本概念"><span class="toc-number">1.</span> <span class="toc-text">数据库的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL"><span class="toc-number">2.</span> <span class="toc-text">SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二、DDL：操作数据库、表"><span class="toc-number">2.0.1.</span> <span class="toc-text">二、DDL：操作数据库、表</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#三、DML："><span class="toc-number">3.</span> <span class="toc-text">三、DML：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、DQL：查询语句"><span class="toc-number">4.</span> <span class="toc-text">四、DQL：查询语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#约束"><span class="toc-number">5.</span> <span class="toc-text">约束</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库的设计"><span class="toc-number">6.</span> <span class="toc-text">数据库的设计</span></a></li>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库的基本概念"><span class="toc-number">1.</span> <span class="toc-text">数据库的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、SQL"><span class="toc-number">2.</span> <span class="toc-text">一、SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二、DDL：操作数据库、表"><span class="toc-number">2.0.1.</span> <span class="toc-text">二、DDL：操作数据库、表</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#三、DML："><span class="toc-number">3.</span> <span class="toc-text">三、DML：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、DQL：查询语句"><span class="toc-number">4.</span> <span class="toc-text">四、DQL：查询语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、约束"><span class="toc-number">5.</span> <span class="toc-text">五、约束</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、数据库的设计"><span class="toc-number">6.</span> <span class="toc-text">六、数据库的设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、数据库的备份和还原"><span class="toc-number">7.</span> <span class="toc-text">七、数据库的备份和还原</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、多表查询："><span class="toc-number">8.</span> <span class="toc-text">八、多表查询：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九、事务"><span class="toc-number">9.</span> <span class="toc-text">九、事务</span></a></li>
                     </div>
                 </span>
             </div>
@@ -697,11 +820,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-JAVA学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color1">-机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color5">-JAVA学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
