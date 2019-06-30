@@ -152,6 +152,991 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-javaScript" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/30/javaScript/">javaScript</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/30/javaScript/" class="archive-article-date">
+  	<time datetime="2019-06-30T06:58:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JavaScript："><a href="#JavaScript：" class="headerlink" title="JavaScript："></a>JavaScript：</h2><pre><code>* 概念：    一门客户端脚本语言
+    * 运行在客户端浏览器中的。每一个浏览器都有JavaScript的解析引擎
+    * 脚本语言：不需要编译，直接就可以被浏览器解析执行了
+
+* 功能：
+    * 可以来增强用户和html页面的交互过程，可以来控制html元素，让页面有一些动态的效果，增强用户的体验。
+
+* JavaScript发展史：
+    1. 1992年，Nombase公司，开发出第一门客户端脚本语言，专门用于表单的校验。命名为 ： C--    ，后来更名为：ScriptEase
+    2. 1995年，Netscape(网景)公司，开发了一门客户端脚本语言：LiveScript。后来，请来SUN公司的专家，修改LiveScript，命名为JavaScript
+    3. 1996年，微软抄袭JavaScript开发出JScript语言
+    4. 1997年，ECMA(欧洲计算机制造商协会)，制定出客户端脚本语言的标准：ECMAScript，就是统一了所有客户端脚本语言的编码方式。
+
+    * JavaScript = ECMAScript + JavaScript自己特有的东西(BOM+DOM)
+
+* ECMAScript：客户端脚本语言的标准
+    1. 基本语法：
+        1. 与html结合方式
+            1. 内部JS：
+                * 定义&lt;script&gt;，标签体内容就是js代码
+            2. 外部JS：
+                * 定义&lt;script&gt;，通过src属性引入外部的js文件
+
+            * 注意：
+                1. &lt;script&gt;可以定义在html页面的任何地方。但是定义的位置会影响执行顺序。
+                2. &lt;script&gt;可以定义多个。
+        2. 注释
+            1. 单行注释：//注释内容
+            2. 多行注释：/*注释内容*/
+        3. 数据类型：
+            1. 原始数据类型(基本数据类型)：
+                1. number：数字。 整数/小数/NaN(not a number 一个不是数字的数字类型)
+                2. string：字符串。 字符串  &quot;abc&quot; &quot;a&quot; &apos;abc&apos;
+                3. boolean: true和false
+                4. null：一个对象为空的占位符
+                5. undefined：未定义。如果一个变量没有给初始化值，则会被默认赋值为undefined
+
+            2. 引用数据类型：对象
+
+        4. 变量
+            * 变量：一小块存储数据的内存空间
+            * Java语言是强类型语言，而JavaScript是弱类型语言。
+                * 强类型：在开辟变量存储空间时，定义了空间将来存储的数据的数据类型。只能存储固定类型的数据
+                * 弱类型：在开辟变量存储空间时，不定义空间将来的存储数据类型，可以存放任意类型的数据。
+            * 语法：
+                * var 变量名 = 初始化值;
+
+            * typeof运算符：获取变量的类型。
+                * 注：null运算后得到的是object
+        5. 运算符
+            1. 一元运算符：只有一个运算数的运算符
+                ++，-- ， +(正号)  
+                * ++ --: 自增(自减)
+                    * ++(--) 在前，先自增(自减)，再运算
+                    * ++(--) 在后，先运算，再自增(自减)
+                * +(-)：正负号
+                * 注意：在JS中，如果运算数不是运算符所要求的类型，那么js引擎会自动的将运算数进行类型转换
+                    * 其他类型转number：
+                        * string转number：按照字面值转换。如果字面值不是数字，则转为NaN（不是数字的数字）
+                        * boolean转number：true转为1，false转为0
+            2. 算数运算符
+                + - * / % ...
+
+            3. 赋值运算符
+                = += -+....
+
+            4. 比较运算符
+                &gt; &lt; &gt;= &lt;= == ===(全等于)
+                * 比较方式
+                  1. 类型相同：直接比较
+                      * 字符串：按照字典顺序比较。按位逐一比较，直到得出大小为止。
+                  2. 类型不同：先进行类型转换，再比较
+                      * ===：全等于。在比较之前，先判断类型，如果类型不一样，则直接返回false
+
+
+            5. 逻辑运算符
+                &amp;&amp; || !
+                * 其他类型转boolean：
+                   1. number：0或NaN为假，其他为真
+                   2. string：除了空字符串(&quot;&quot;)，其他都是true
+                   3. null&amp;undefined:都是false
+                   4. 对象：所有对象都为true
+
+            6. 三元运算符
+                ? : 表达式
+                var a = 3;
+                var b = 4;
+
+                var c = a &gt; b ? 1:0;
+                * 语法：
+                    * 表达式? 值1:值2;
+                    * 判断表达式的值，如果是true则取值1，如果是false则取值2；
+
+        6. 流程控制语句：
+            1. if...else...
+            2. switch:
+                * 在java中，switch语句可以接受的数据类型： byte int shor char,枚举(1.5) ,String(1.7)
+                    * switch(变量):
+                        case 值:
+                * 在JS中,switch语句可以接受任意的原始数据类型
+            3. while
+            4. do...while
+            5. for
+        7. JS特殊语法：
+            1. 语句以;结尾，如果一行只有一条语句则 ;可以省略 (不建议)
+            2. 变量的定义使用var关键字，也可以不使用
+                * 用： 定义的变量是局部变量
+                * 不用：定义的变量是全局变量(不建议)
+
+        8. 练习：99乘法表
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang=&quot;en&quot;&gt;
+        &lt;head&gt;
+            &lt;meta charset=&quot;UTF-8&quot;&gt;
+            &lt;title&gt;99乘法表&lt;/title&gt;
+            &lt;style&gt;
+                td{
+                    border: 1px solid;
+                }
+
+            &lt;/style&gt;
+
+            &lt;script&gt;
+
+                document.write(&quot;&lt;table  align=&apos;center&apos;&gt;&quot;);
+
+
+                //1.完成基本的for循环嵌套，展示乘法表
+                for (var i = 1; i &lt;= 9 ; i++) {
+                    document.write(&quot;&lt;tr&gt;&quot;);
+                    for (var j = 1; j &lt;=i ; j++) {
+                        document.write(&quot;&lt;td&gt;&quot;);
+
+                        //输出  1 * 1 = 1
+                        document.write(i + &quot; * &quot; + j + &quot; = &quot; + ( i*j) +&quot;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;);
+
+                        document.write(&quot;&lt;/td&gt;&quot;);
+                    }
+                    /*//输出换行
+                    document.write(&quot;&lt;br&gt;&quot;);*/
+
+                    document.write(&quot;&lt;/tr&gt;&quot;);
+                }
+
+                //2.完成表格嵌套
+                document.write(&quot;&lt;/table&gt;&quot;);
+
+            &lt;/script&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+
+        &lt;/body&gt;
+        &lt;/html&gt;
+
+    2. 基本对象：
+        1. Function：函数(方法)对象
+            1. 创建：
+                1. var fun = new Function(形式参数列表,方法体);  //忘掉吧
+                2. 
+                    function 方法名称(形式参数列表){
+                        方法体
+                    }
+
+                3. 
+                   var 方法名 = function(形式参数列表){
+                        方法体
+                   }
+            2. 方法：
+
+            3. 属性：
+                length:代表形参的个数
+            4. 特点：
+                1. 方法定义是，形参的类型不用写,返回值类型也不写。
+                2. 方法是一个对象，如果定义名称相同的方法，会覆盖
+                3. 在JS中，方法的调用只与方法的名称有关，和参数列表无关
+                4. 在方法声明中有一个隐藏的内置对象（数组），arguments,封装所有的实际参数
+            5. 调用：
+                方法名称(实际参数列表);
+
+        2. Array:数组对象
+            1. 创建：
+                1. var arr = new Array(元素列表);
+                2. var arr = new Array(默认长度);
+                3. var arr = [元素列表];
+            2. 方法
+                join(参数):将数组中的元素按照指定的分隔符拼接为字符串
+                push()    向数组的末尾添加一个或更多元素，并返回新的长度。
+            3. 属性
+                length:数组的长度
+            4. 特点：
+                1. JS中，数组元素的类型可变的。
+                2. JS中，数组长度可变的。
+        3. Boolean
+        4. Date：日期对象
+            1. 创建：
+                var date = new Date();
+
+            2. 方法：
+                toLocaleString()：返回当前date对象对应的时间本地字符串格式
+                getTime():获取毫秒值。返回当前如期对象描述的时间到1970年1月1日零点的毫秒值差
+        5. Math：数学对象
+            1. 创建：
+                * 特点：Math对象不用创建，直接使用。  Math.方法名();
+
+            2. 方法：
+                random():返回 0 ~ 1 之间的随机数。 含0不含1
+                ceil(x)：对数进行上舍入。
+                floor(x)：对数进行下舍入。
+                round(x)：把数四舍五入为最接近的整数。
+            3. 属性：
+                PI
+        6. Number
+        7. String
+        8. RegExp：正则表达式对象
+            1. 正则表达式：定义字符串的组成规则。
+                1. 单个字符:[]
+                    如： [a] [ab] [a-zA-Z0-9_]
+                    * 特殊符号代表特殊含义的单个字符:
+                        \d:单个数字字符 [0-9]
+                        \w:单个单词字符[a-zA-Z0-9_]
+                2. 量词符号：
+                    ?：表示出现0次或1次
+                    *：表示出现0次或多次
+                    +：出现1次或多次
+                    {m,n}:表示 m&lt;= 数量 &lt;= n
+                        * m如果缺省： {,n}:最多n次
+                        * n如果缺省：{m,} 最少m次
+                3. 开始结束符号
+                    * ^:开始
+                    * $:结束
+            2. 正则对象：
+                1. 创建
+                    1. var reg = new RegExp(&quot;正则表达式&quot;);
+                    2. var reg = /正则表达式/;
+                2. 方法    
+                    1. test(参数):验证指定的字符串是否符合正则定义的规范    
+        9. Global
+            1. 特点：全局对象，这个Global中封装的方法不需要对象就可以直接调用。  方法名();
+            2. 方法：
+                encodeURI():url编码
+                decodeURI():url解码
+
+                encodeURIComponent():url编码,编码的字符更多
+                decodeURIComponent():url解码
+
+                parseInt():将字符串转为数字
+                    * 逐一判断每一个字符是否是数字，直到不是数字为止，将前边数字部分转为number
+                isNaN():判断一个值是否是NaN
+                    * NaN六亲不认，连自己都不认。NaN参与的==比较全部问false
+
+                eval():讲 JavaScript 字符串，并把它作为脚本代码来执行。
+            3. URL编码
+
+* BOM
+
+* DOM</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/30/javaScript/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HTML-CSS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/29/HTML-CSS/">HTML&amp;CSS</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/29/HTML-CSS/" class="archive-article-date">
+  	<time datetime="2019-06-29T11:48:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="web概念概述"><a href="#web概念概述" class="headerlink" title="web概念概述"></a>web概念概述</h2><pre><code>* JavaWeb：
+    * 使用Java语言开发基于互联网的项目
+
+* 软件架构：
+    1. C/S: Client/Server 客户端/服务器端
+        * 在用户本地有一个客户端程序，在远程有一个服务器端程序
+        * 如：QQ，迅雷...
+        * 优点：
+            1. 用户体验好
+        * 缺点：
+            1. 开发、安装，部署，维护 麻烦
+    2. B/S: Browser/Server 浏览器/服务器端
+        * 只需要一个浏览器，用户通过不同的网址(URL)，客户访问不同的服务器端程序
+        * 优点：
+            1. 开发、安装，部署，维护 简单
+        * 缺点：
+            1. 如果应用过大，用户的体验可能会受到影响
+            2. 对硬件要求过高
+
+* B/S架构详解
+    * 资源分类：
+        1. 静态资源：
+            * 使用静态网页开发技术发布的资源。
+            * 特点：
+                * 所有用户访问，得到的结果是一样的。
+                * 如：文本，图片，音频、视频, HTML,CSS,JavaScript
+                * 如果用户请求的是静态资源，那么服务器会直接将静态资源发送给浏览器。浏览器中内置了静态资源的解析引擎，可以展示静态资源
+        2. 动态资源：
+            * 使用动态网页及时发布的资源。
+            * 特点：
+                * 所有用户访问，得到的结果可能不一样。
+                * 如：jsp/servlet,php,asp...
+                * 如果用户请求的是动态资源，那么服务器会执行动态资源，转换为静态资源，再发送给浏览器
+
+
+
+    * 静态资源：
+        * HTML：用于搭建基础网页，展示页面的内容
+        * CSS：用于美化页面，布局页面
+        * JavaScript：控制页面的元素，让页面有一些动态的效果    </code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/29/HTML-CSS/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Tomcat-Servlet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/18/Tomcat-Servlet/">Tomcat&amp;Servlet</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/18/Tomcat-Servlet/" class="archive-article-date">
+  	<time datetime="2019-06-18T07:14:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="web相关概念回顾"><a href="#web相关概念回顾" class="headerlink" title="web相关概念回顾"></a>web相关概念回顾</h2><pre><code>1. 软件架构
+    1. C/S：客户端/服务器端
+    2. B/S：浏览器/服务器端
+
+2. 资源分类
+    1. 静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析
+        * 如： html,css,JavaScript
+    2. 动态资源:每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，在返回给浏览器
+        * 如：servlet/jsp,php,asp....
+
+
+3. 网络通信三要素
+    1. IP：电子设备(计算机)在网络中的唯一标识。
+    2. 端口：应用程序在计算机中的唯一标识。 0~65536
+    3. 传输协议：规定了数据传输的规则
+        1. 基础协议：
+            1. tcp:安全协议，三次握手。 速度稍慢
+            2. udp：不安全协议。 速度快</code></pre><h2 id="web服务器软件："><a href="#web服务器软件：" class="headerlink" title="web服务器软件："></a>web服务器软件：</h2><pre><code>* 服务器：安装了服务器软件的计算机
+* 服务器软件：接收用户的请求，处理请求，做出响应
+* web服务器软件：接收用户的请求，处理请求，做出响应。
+    * 在web服务器软件中，可以部署web项目，让用户通过浏览器来访问这些项目
+    * web容器
+
+
+* 常见的java相关的web服务器软件：
+    * webLogic：oracle公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。
+    * webSphere：IBM公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。
+    * JBOSS：JBOSS公司的，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。
+    * Tomcat：Apache基金组织，中小型的JavaEE服务器，仅仅支持少量的JavaEE规范servlet/jsp。开源的，免费的。
+
+
+* JavaEE：Java语言在企业级开发中使用的技术规范的总和，一共规定了13项大的规范
+
+* Tomcat：web服务器软件
+    1. 下载：http://tomcat.apache.org/
+    2. 安装：解压压缩包即可。
+        * 注意：安装目录建议不要有中文和空格
+    3. 卸载：删除目录就行了
+    4. 启动：
+        * bin/startup.bat ,双击运行该文件即可
+        * 访问：浏览器输入：http://localhost:8080 回车访问自己
+                          http://别人的ip:8080 访问别人
+
+        * 可能遇到的问题：
+            1. 黑窗口一闪而过：
+                * 原因： 没有正确配置JAVA_HOME环境变量
+                * 解决方案：正确配置JAVA_HOME环境变量
+
+            2. 启动报错：
+                1. 暴力：找到占用的端口号，并且找到对应的进程，杀死该进程
+                    * netstat -ano
+                2. 温柔：修改自身的端口号
+                    * conf/server.xml
+                    * &lt;Connector port=&quot;8888&quot; protocol=&quot;HTTP/1.1&quot;
+                       connectionTimeout=&quot;20000&quot;
+                       redirectPort=&quot;8445&quot; /&gt;
+                    * 一般会将tomcat的默认端口号修改为80。80端口号是http协议的默认端口号。
+                        * 好处：在访问时，就不用输入端口号
+    5. 关闭：
+        1. 正常关闭：
+            * bin/shutdown.bat
+            * ctrl+c
+        2. 强制关闭：
+            * 点击启动窗口的×
+    6. 配置:
+        * 部署项目的方式：
+            1. 直接将项目放到webapps目录下即可。
+                * /hello：项目的访问路径--&gt;虚拟目录
+                * 简化部署：将项目打成一个war包，再将war包放置到webapps目录下。
+                    * war包会自动解压缩
+
+            2. 配置conf/server.xml文件
+                在&lt;Host&gt;标签体中配置
+                &lt;Context docBase=&quot;D:\hello&quot; path=&quot;/hehe&quot; /&gt;
+                * docBase:项目存放的路径
+                * path：虚拟目录
+
+            3. 在conf\Catalina\localhost创建任意名称的xml文件。在文件中编写
+                &lt;Context docBase=&quot;D:\hello&quot; /&gt;
+                * 虚拟目录：xml文件的名称
+
+        * 静态项目和动态项目：
+            * 目录结构
+                * java动态项目的目录结构：
+                    -- 项目的根目录
+                        -- WEB-INF目录：
+                            -- web.xml：web项目的核心配置文件
+                            -- classes目录：放置字节码文件的目录
+                            -- lib目录：放置依赖的jar包
+
+
+        * 将Tomcat集成到IDEA中，并且创建JavaEE的项目，部署项目。</code></pre><h2 id="Servlet：-server-applet"><a href="#Servlet：-server-applet" class="headerlink" title="Servlet：  server applet"></a>Servlet：  server applet</h2><pre><code>* 概念：运行在服务器端的小程序
+    * Servlet就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则。
+    * 将来我们自定义一个类，实现Servlet接口，复写方法。
+
+
+* 快速入门：
+    1. 创建JavaEE项目
+    2. 定义一个类，实现Servlet接口
+        * public class ServletDemo1 implements Servlet
+    3. 实现接口中的抽象方法
+    4. 配置Servlet
+         在web.xml中配置：
+        &lt;!--配置Servlet --&gt;
+        &lt;servlet&gt;
+            &lt;servlet-name&gt;demo1&lt;/servlet-name&gt;
+            &lt;servlet-class&gt;cn.itcast.web.servlet.ServletDemo1&lt;/servlet-class&gt;
+        &lt;/servlet&gt;
+
+        &lt;servlet-mapping&gt;
+            &lt;servlet-name&gt;demo1&lt;/servlet-name&gt;
+            &lt;url-pattern&gt;/demo1&lt;/url-pattern&gt;
+        &lt;/servlet-mapping&gt;
+
+* 执行原理：
+    1. 当服务器接受到客户端浏览器的请求后，会解析请求URL路径，获取访问的Servlet的资源路径
+    2. 查找web.xml文件，是否有对应的&lt;url-pattern&gt;标签体内容。
+    3. 如果有，则在找到对应的&lt;servlet-class&gt;全类名
+    4. tomcat会将字节码文件加载进内存，并且创建其对象
+    5. 调用其方法
+
+* Servlet中的生命周期方法：
+    1. 被创建：执行init方法，只执行一次
+        * Servlet什么时候被创建？
+            * 默认情况下，第一次被访问时，Servlet被创建
+            * 可以配置执行Servlet的创建时机。
+                * 在&lt;servlet&gt;标签下配置
+                    1. 第一次被访问时，创建
+                        * &lt;load-on-startup&gt;的值为负数
+                    2. 在服务器启动时，创建
+                        * &lt;load-on-startup&gt;的值为0或正整数
+
+
+        * Servlet的init方法，只执行一次，说明一个Servlet在内存中只存在一个对象，Servlet是单例的
+            * 多个用户同时访问时，可能存在线程安全问题。
+            * 解决：尽量不要在Servlet中定义成员变量。即使定义了成员变量，也不要对修改值
+
+    2. 提供服务：执行service方法，执行多次
+        * 每次访问Servlet时，Service方法都会被调用一次。
+    3. 被销毁：执行destroy方法，只执行一次
+        * Servlet被销毁时执行。服务器关闭时，Servlet被销毁
+        * 只有服务器正常关闭时，才会执行destroy方法。
+        * destroy方法在Servlet被销毁之前执行，一般用于释放资源
+
+* Servlet3.0：
+    * 好处：
+        * 支持注解配置。可以不需要web.xml了。
+
+    * 步骤：
+        1. 创建JavaEE项目，选择Servlet的版本3.0以上，可以不创建web.xml
+        2. 定义一个类，实现Servlet接口
+        3. 复写方法
+        4. 在类上使用@WebServlet注解，进行配置
+            * @WebServlet(&quot;资源路径&quot;)
+
+
+            @Target({ElementType.TYPE})
+            @Retention(RetentionPolicy.RUNTIME)
+            @Documented
+            public @interface WebServlet {
+                String name() default &quot;&quot;;//相当于&lt;Servlet-name&gt;
+
+                String[] value() default {};//代表urlPatterns()属性配置
+
+                String[] urlPatterns() default {};//相当于&lt;url-pattern&gt;
+
+                int loadOnStartup() default -1;//相当于&lt;load-on-startup&gt;
+
+                WebInitParam[] initParams() default {};
+
+                boolean asyncSupported() default false;
+
+                String smallIcon() default &quot;&quot;;
+
+                String largeIcon() default &quot;&quot;;
+
+                String description() default &quot;&quot;;
+
+                String displayName() default &quot;&quot;;
+            }</code></pre><h2 id="IDEA与tomcat的相关配置"><a href="#IDEA与tomcat的相关配置" class="headerlink" title="IDEA与tomcat的相关配置"></a>IDEA与tomcat的相关配置</h2><pre><code>1. IDEA会为每一个tomcat部署的项目单独建立一份配置文件
+    * 查看控制台的log：Using CATALINA_BASE:   &quot;C:\Users\fqy\.IntelliJIdea2018.1\system\tomcat\_itcast&quot;
+
+2. 工作空间项目    和     tomcat部署的web项目
+    * tomcat真正访问的是“tomcat部署的web项目”，&quot;tomcat部署的web项目&quot;对应着&quot;工作空间项目&quot; 的web目录下的所有资源
+    * WEB-INF目录下的资源不能被浏览器直接访问。
+3. 断点调试：使用&quot;小虫子&quot;启动 dubug 启动</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-Javaweb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/18/Tomcat-Servlet/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-xml" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/17/xml/">XML</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/17/xml/" class="archive-article-date">
+  	<time datetime="2019-06-17T12:02:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="XML："><a href="#XML：" class="headerlink" title="XML："></a>XML：</h2><pre><code>1. 概念：Extensible Markup Language 可扩展标记语言
+    * 可扩展：标签都是自定义的。 &lt;user&gt;  &lt;student&gt;
+
+    * 功能
+        * 存储数据
+            1. 配置文件
+            2. 在网络中传输
+    * xml与html的区别
+        1. xml标签都是自定义的，html标签是预定义。
+        2. xml的语法严格，html语法松散
+        3. xml是存储数据的，html是展示数据
+
+    * w3c:万维网联盟
+
+2. 语法：
+    * 基本语法：
+        1. xml文档的后缀名 .xml
+        2. xml第一行必须定义为文档声明
+        3. xml文档中有且仅有一个根标签
+        4. 属性值必须使用引号(单双都可)引起来
+        5. 标签必须正确关闭
+        6. xml标签名称区分大小写
+    * 快速入门：
+        &lt;?xml version=&apos;1.0&apos; ?&gt;
+        &lt;users&gt;
+            &lt;user id=&apos;1&apos;&gt;
+                &lt;name&gt;zhangsan&lt;/name&gt;
+                &lt;age&gt;23&lt;/age&gt;
+                &lt;gender&gt;male&lt;/gender&gt;
+                &lt;br/&gt;
+            &lt;/user&gt;
+
+            &lt;user id=&apos;2&apos;&gt;
+                &lt;name&gt;lisi&lt;/name&gt;
+                &lt;age&gt;24&lt;/age&gt;
+                &lt;gender&gt;female&lt;/gender&gt;
+            &lt;/user&gt;
+        &lt;/users&gt;
+
+    * 组成部分：
+        1. 文档声明
+            1. 格式：&lt;?xml 属性列表 ?&gt;
+            2. 属性列表：
+                * version：版本号，必须的属性
+                * encoding：编码方式。告知解析引擎当前文档使用的字符集，默认值：ISO-8859-1
+                * standalone：是否独立
+                    * 取值：
+                        * yes：不依赖其他文件
+                        * no：依赖其他文件
+        2. 指令(了解)：结合css的
+            * &lt;?xml-stylesheet type=&quot;text/css&quot; href=&quot;a.css&quot; ?&gt;
+        3. 标签：标签名称自定义的
+            * 规则：
+                * 名称可以包含字母、数字以及其他的字符 
+                * 名称不能以数字或者标点符号开始 
+                * 名称不能以字母 xml（或者 XML、Xml 等等）开始 
+                * 名称不能包含空格 
+
+        4. 属性：
+            id属性值唯一
+        5. 文本：
+            * CDATA区：在该区域中的数据会被原样展示
+                * 格式：  &lt;![CDATA[ 数据 ]]&gt;
+
+
+    * 约束：规定xml文档的书写规则
+        * 作为框架的使用者(程序员)：
+            1. 能够在xml中引入约束文档
+            2. 能够简单的读懂约束文档
+
+        * 分类：
+            1. DTD:一种简单的约束技术
+            2. Schema:一种复杂的约束技术
+
+
+        * DTD：
+            * 引入dtd文档到xml文档中
+                * 内部dtd：将约束规则定义在xml文档中
+                * 外部dtd：将约束的规则定义在外部的dtd文件中
+                    * 本地：&lt;!DOCTYPE 根标签名 SYSTEM &quot;dtd文件的位置&quot;&gt;
+                    * 网络：&lt;!DOCTYPE 根标签名 PUBLIC &quot;dtd文件名字&quot; &quot;dtd文件的位置URL&quot;&gt;
+
+
+        * Schema:
+            * 引入：
+                1.填写xml文档的根元素
+                2.引入xsi前缀.  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+                3.引入xsd文件命名空间.  xsi:schemaLocation=&quot;http://www.itcast.cn/xml  student.xsd&quot;
+                4.为每一个xsd约束声明一个前缀,作为标识  xmlns=&quot;http://www.itcast.cn/xml&quot; 
+
+            &lt;students   xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+                xmlns=&quot;http://www.itcast.cn/xml&quot;
+                xsi:schemaLocation=&quot;http://www.itcast.cn/xml  student.xsd&quot;&gt;
+
+
+
+3. 解析：操作xml文档，将文档中的数据读取到内存中
+    * 操作xml文档
+        1. 解析(读取)：将文档中的数据读取到内存中
+        2. 写入：将内存中的数据保存到xml文档中。持久化的存储
+
+    * 解析xml的方式：
+        1. DOM：将标记语言文档一次性加载进内存，在内存中形成一颗dom树
+            * 优点：操作方便，可以对文档进行CRUD的所有操作
+            * 缺点：占内存
+        2. SAX：逐行读取，基于事件驱动的。
+            * 优点：不占内存。
+            * 缺点：只能读取，不能增删改
+
+
+
+    * xml常见的解析器：
+        1. JAXP：sun公司提供的解析器，支持dom和sax两种思想
+        2. DOM4J：一款非常优秀的解析器
+        3. Jsoup：jsoup 是一款Java 的HTML解析器，可直接解析某个URL地址、HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据。
+        4. PULL：Android操作系统内置的解析器，sax方式的。
+
+
+    * Jsoup：jsoup 是一款Java 的HTML解析器，可直接解析某个URL地址、HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据。
+        * 快速入门：
+            * 步骤：
+                1. 导入jar包
+                2. 获取Document对象
+                3. 获取对应的标签Element对象
+                4. 获取数据
+
+        * 代码：
+             //2.1获取student.xml的path
+            String path = JsoupDemo1.class.getClassLoader().getResource(&quot;student.xml&quot;).getPath();
+            //2.2解析xml文档，加载文档进内存，获取dom树---&gt;Document
+            Document document = Jsoup.parse(new File(path), &quot;utf-8&quot;);
+            //3.获取元素对象 Element
+            Elements elements = document.getElementsByTag(&quot;name&quot;);
+
+            System.out.println(elements.size());
+            //3.1获取第一个name的Element对象
+            Element element = elements.get(0);
+            //3.2获取数据
+            String name = element.text();
+            System.out.println(name);
+
+    * 对象的使用：
+        1. Jsoup：工具类，可以解析html或xml文档，返回Document
+            * parse：解析html或xml文档，返回Document
+                * parse​(File in, String charsetName)：解析xml或html文件的。
+                * parse​(String html)：解析xml或html字符串
+                * parse​(URL url, int timeoutMillis)：通过网络路径获取指定的html或xml的文档对象
+        2. Document：文档对象。代表内存中的dom树
+            * 获取Element对象
+                * getElementById​(String id)：根据id属性值获取唯一的element对象
+                * getElementsByTag​(String tagName)：根据标签名称获取元素对象集合
+                * getElementsByAttribute​(String key)：根据属性名称获取元素对象集合
+                * getElementsByAttributeValue​(String key, String value)：根据对应的属性名和属性值获取元素对象集合
+        3. Elements：元素Element对象的集合。可以当做 ArrayList&lt;Element&gt;来使用
+        4. Element：元素对象
+            1. 获取子元素对象
+                * getElementById​(String id)：根据id属性值获取唯一的element对象
+                * getElementsByTag​(String tagName)：根据标签名称获取元素对象集合
+                * getElementsByAttribute​(String key)：根据属性名称获取元素对象集合
+                * getElementsByAttributeValue​(String key, String value)：根据对应的属性名和属性值获取元素对象集合
+
+            2. 获取属性值
+                * String attr(String key)：根据属性名称获取属性值
+            3. 获取文本内容
+                * String text():获取文本内容
+                * String html():获取标签体的所有内容(包括字标签的字符串内容)
+        5. Node：节点对象
+            * 是Document和Element的父类
+
+
+    * 快捷查询方式：
+        1. selector:选择器
+            * 使用的方法：Elements    select​(String cssQuery)
+                * 语法：参考Selector类中定义的语法
+        2. XPath：XPath即为XML路径语言，它是一种用来确定XML（标准通用标记语言的子集）文档中某部分位置的语言
+            * 使用Jsoup的Xpath需要额外导入jar包。
+            * 查询w3cshool参考手册，使用xpath的语法完成查询
+            * 代码：
+                //1.获取student.xml的path
+                String path = JsoupDemo6.class.getClassLoader().getResource(&quot;student.xml&quot;).getPath();
+                //2.获取Document对象
+                Document document = Jsoup.parse(new File(path), &quot;utf-8&quot;);
+
+                //3.根据document对象，创建JXDocument对象
+                JXDocument jxDocument = new JXDocument(document);
+
+                //4.结合xpath语法查询
+                //4.1查询所有student标签
+                List&lt;JXNode&gt; jxNodes = jxDocument.selN(&quot;//student&quot;);
+                for (JXNode jxNode : jxNodes) {
+                    System.out.println(jxNode);
+                }
+
+                System.out.println(&quot;--------------------&quot;);
+
+                //4.2查询所有student标签下的name标签
+                List&lt;JXNode&gt; jxNodes2 = jxDocument.selN(&quot;//student/name&quot;);
+                for (JXNode jxNode : jxNodes2) {
+                    System.out.println(jxNode);
+                }
+
+                System.out.println(&quot;--------------------&quot;);
+
+                //4.3查询student标签下带有id属性的name标签
+                List&lt;JXNode&gt; jxNodes3 = jxDocument.selN(&quot;//student/name[@id]&quot;);
+                for (JXNode jxNode : jxNodes3) {
+                    System.out.println(jxNode);
+                }
+                System.out.println(&quot;--------------------&quot;);
+                //4.4查询student标签下带有id属性的name标签 并且id属性值为itcast
+
+                List&lt;JXNode&gt; jxNodes4 = jxDocument.selN(&quot;//student/name[@id=&apos;itcast&apos;]&quot;);
+                for (JXNode jxNode : jxNodes4) {
+                    System.out.println(jxNode);
+                }</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-JavaWeb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/17/xml/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JDBC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1302,151 +2287,6 @@
 
 
   
-    <article id="post-Bootstrap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/16/Bootstrap/">Bootstrap</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/16/Bootstrap/" class="archive-article-date">
-  	<time datetime="2019-05-16T05:15:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Bootstrap："><a href="#Bootstrap：" class="headerlink" title="Bootstrap："></a>Bootstrap：</h2><pre><code>1. 概念： 一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。
-    * 框架:一个半成品软件，开发人员可以在框架基础上，在进行开发，简化编码。
-    * 好处：
-        1. 定义了很多的css样式和js插件。我们开发人员直接可以使用这些样式和插件得到丰富的页面效果。
-        2. 响应式布局。
-            * 同一套页面可以兼容不同分辨率的设备。
-
-
-2. 快速入门
-    1. 下载Bootstrap
-    2. 在项目中将这三个文件夹复制
-    3. 创建html页面，引入必要的资源文件
-
-
-    &lt;!DOCTYPE html&gt;
-    &lt;html lang=&quot;zh-CN&quot;&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;utf-8&quot;&gt;
-        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-        &lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;
-        &lt;title&gt;Bootstrap HelloWorld&lt;/title&gt;
-
-        &lt;!-- Bootstrap --&gt;
-        &lt;link href=&quot;css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
-
-
-        &lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;
-        &lt;script src=&quot;js/jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
-        &lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --&gt;
-        &lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;h1&gt;你好，世界！&lt;/h1&gt;
-
-    &lt;/body&gt;
-    &lt;/html&gt;</code></pre><h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><pre><code>* 同一套页面可以兼容不同分辨率的设备。
-* 实现：依赖于栅格系统：将一行平均分成12个格子，可以指定元素占几个格子
-* 步骤：
-    1. 定义容器。相当于之前的table、
-        * 容器分类：
-            1. container：两边留白
-            2. container-fluid：每一种设备都是100%宽度
-    2. 定义行。相当于之前的tr   样式：row
-    3. 定义元素。指定该元素在不同的设备上，所占的格子数目。样式：col-设备代号-格子数目
-        * 设备代号：
-            1. xs：超小屏幕 手机 (&lt;768px)：col-xs-12
-            2. sm：小屏幕 平板 (≥768px)
-            3. md：中等屏幕 桌面显示器 (≥992px)
-            4. lg：大屏幕 大桌面显示器 (≥1200px)
-
-    * 注意：
-        1. 一行中如果格子数目超过12，则超出部分自动换行。
-        2. 栅格类属性可以向上兼容。栅格类适用于与屏幕宽度大于或等于分界点大小的设备。
-        3. 如果真实设备宽度小于了设置栅格类属性的设备代码的最小值，会一个元素沾满一整行。</code></pre><h2 id="CSS样式和JS插件"><a href="#CSS样式和JS插件" class="headerlink" title="CSS样式和JS插件"></a>CSS样式和JS插件</h2><pre><code>1. 全局CSS样式：
-    * 按钮：class=&quot;btn btn-default&quot;
-    * 图片：
-        *  class=&quot;img-responsive&quot;：图片在任意尺寸都占100%
-        *  图片形状
-            *  &lt;img src=&quot;...&quot; alt=&quot;...&quot; class=&quot;img-rounded&quot;&gt;：方形
-            *  &lt;img src=&quot;...&quot; alt=&quot;...&quot; class=&quot;img-circle&quot;&gt; ： 圆形
-            *  &lt;img src=&quot;...&quot; alt=&quot;...&quot; class=&quot;img-thumbnail&quot;&gt; ：相框
-    * 表格
-        * table
-        * table-bordered
-        * table-hover
-    * 表单
-        * 给表单项添加：class=&quot;form-control&quot; 
-2. 组件：
-    * 导航条
-    * 分页条
-3. 插件：
-    * 轮播图</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-JAVA学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/16/Bootstrap/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-javaobjectprocess" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1952,197 +2792,10 @@
 
 
   
-    <article id="post-JAVA-IO接口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/15/JAVA-IO接口/">JAVA/IO</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/15/JAVA-IO接口/" class="archive-article-date">
-  	<time datetime="2019-05-15T07:21:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="java-io"><a href="#java-io" class="headerlink" title="java.io"></a>java.io</h2><p>在java程序中，对于数据的输入、输出操作以“流”（stream）方式进行：<br>J2SDK提供了各种各样的“流”类，用以获取不同种类的数据：程序中通过标准的方法输入或输出数据。JAVA的流类型一般唯一java.io包中。</p>
-<h2 id="java-io包中最重要的五个类和三个接口"><a href="#java-io包中最重要的五个类和三个接口" class="headerlink" title="java.io包中最重要的五个类和三个接口"></a>java.io包中最重要的五个类和三个接口</h2><table>
-<thead>
-<tr>
-<th align="left">Tables</th>
-<th align="left">Are</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">File</td>
-<td align="left">文件类</td>
-</tr>
-<tr>
-<td align="left">InputStream</td>
-<td align="left">字节输入流</td>
-</tr>
-<tr>
-<td align="left">OutputStream</td>
-<td align="left">字节输出流</td>
-</tr>
-<tr>
-<td align="left">Reader</td>
-<td align="left">字符输入流</td>
-</tr>
-<tr>
-<td align="left">Writer</td>
-<td align="left">字符输出流</td>
-</tr>
-<tr>
-<td align="left">Closeable</td>
-<td align="left">关闭流接口</td>
-</tr>
-<tr>
-<td align="left">Flushable</td>
-<td align="left">刷新流接口</td>
-</tr>
-<tr>
-<td align="left">Serializable</td>
-<td align="left">序列化接口</td>
-</tr>
-</tbody></table>
-<h2 id="流分类"><a href="#流分类" class="headerlink" title="流分类"></a>流分类</h2><ul>
-<li>节点流：可以直接从数据源或目的地读写数据</li>
-<li>处理流（包装流）：不直接连接到数据源或目的地，是其他流进行封装。目的主要是简化操作和提高性能。</li>
-<li>节点流和处理流的关系：</li>
-</ul>
-<p>1.节点流处于io操作的第一线，所有操作必须通过他们进行；</p>
-<p>2.处理流可以对其他流进行处理（提高效率或操作灵活性）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-JAVA学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/15/JAVA-IO接口/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-manny-bug" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/14/manny-bug/">Map接口</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/14/manny-bug/" class="archive-article-date">
-  	<time datetime="2019-05-14T11:41:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Map就是用来存储“key-value对”的。Map中存储的“键值对”通过键来标识，所以“键值对”不能重复<br>Map接口的实现类:</p>
-<ul>
-<li>HashMap</li>
-<li>TreeMap</li>
-<li>HashTable</li>
-<li>Properties<h3 id="HashMap的底层原理"><a href="#HashMap的底层原理" class="headerlink" title="HashMap的底层原理"></a>HashMap的底层原理</h3></li>
-</ul>
-<p>底层实现采用了<strong>哈希表</strong></p>
-<h3 id="TreeMap的应用（红黑二叉树的典型表现）"><a href="#TreeMap的应用（红黑二叉树的典型表现）" class="headerlink" title="TreeMap的应用（红黑二叉树的典型表现）"></a>TreeMap的应用（红黑二叉树的典型表现）</h3><h3 id="Set接口"><a href="#Set接口" class="headerlink" title="Set接口"></a>Set接口</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/14/manny-bug/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -2244,7 +2897,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-Javaweb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-数据结构与算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2253,6 +2918,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-javascript</a>
               </li>
             
             <div class="clearfix"></div>
